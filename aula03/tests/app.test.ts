@@ -1,18 +1,32 @@
+import calculator from "calculator"
+
 describe("maths Tests", () => {
     it("Sum", () => {
-        expect(2+2).toBe(4)
+        const n1 = 1;
+        const n2 = 2;
+        const result = calculator.sum(n1, n2);
+        expect(result).toEqual(n1 + n2)
     });
 
     it("Sub", () => {
-        expect(2-2).toBe(0)
+        const n1 = 1;
+        const n2 = 2;
+        const result = calculator.sub(n1, n2);
+        expect(result).toEqual(n1 - n2)
     });
 
     it("Mul", () => {
-        expect(2*2).toBe(4)
+        const n1 = 1;
+        const n2 = 2;
+        const result = calculator.mul(n1, n2);
+        expect(result).toEqual(n1 * n2)
     });
 
     it("Div", () => {
-        expect(2/2).toBe(1)
+        const n1 = 1;
+        const n2 = 2;
+        const result = calculator.div(n1, n2);
+        expect(result).toEqual(n1 / n2)
     });
 })
 
