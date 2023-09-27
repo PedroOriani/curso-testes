@@ -9,15 +9,14 @@ describe("API test", () => {
   it("Should return the correct object", async () => {
     const result = await api.get('/event');
 
-    expect(result).toEqual(
-      expect.arrayContaining([
-        expect.objectContaining({
-          id: expect.any(Number),
-          title: expect.any(String),
-          image: expect.any(String),
-          date: expect.any(timeStamp)
-        })
-      ])
+    const date = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/;
+
+    expect(result.body).toEqual({
+      id: expect.any(Number),
+      title: expect.any(String),
+      image: expect.any(String),
+      date: expect.stringMatching(date)
+    }
     )
   })
 });
